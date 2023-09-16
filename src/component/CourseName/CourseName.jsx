@@ -15,12 +15,8 @@ const CourseName = (props) => {
         <div>
             <div>
                 <h1>Credit Hour Remaining <span>7</span> hr</h1>
-                <h1>Credit Hour Remaining <span>7</span> hr</h1>
-                <h1>Credit Hour Remaining <span>7</span> hr</h1>
-
             </div>
             <hr className='w-full' />
-
             <div>
                 <h1>Course Name</h1>
                 <ul className='list-disc'>
