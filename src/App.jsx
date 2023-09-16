@@ -18,7 +18,7 @@ function App() {
 
     const isExits = data.find(items => items.id == courss.id);
     if (isExits) {
-      return alert('ther is blocked');
+      return toast('Hello Geeks');
     }
     else {
       let count = reamining;
@@ -36,7 +36,7 @@ function App() {
       console.log('plus cost', cost);
 
 
-      if (count <= 0) {
+      if (count < 0) {
         return alert('ar na');
       }
       else {
@@ -69,6 +69,7 @@ function App() {
           ></CourseName></p>
         </div>
       </div>
+
     </div>
   )
 }
