@@ -3,8 +3,11 @@ import React, { useEffect, useState } from 'react';
 const CourseName = (props) => {
     const courss = props.data;
     const id = props.id;
-    const [last, setLast] = useState([]);
-    // console.log(last);
+    const reamining = props.reamining;
+    const totaCredit = props.totaCredit;
+    const totaCost = props.totaCost;
+
+
 
 
 
@@ -14,25 +17,24 @@ const CourseName = (props) => {
     return (
         <div>
             <div>
-                <h1>Credit Hour Remaining <span>7</span> hr</h1>
+                <h1 className='text-[#2F80ED] text-lg font-bold mb-4' >Credit Hour Remaining <span>{reamining}</span> hr</h1>
             </div>
             <hr className='w-full' />
             <div>
-                <h1>Course Name</h1>
+                <h1 className='text-[#1C1B1B] text-xl font-bold mt-5 mb-4'>Course Name</h1>
                 <ul className='list-disc'>
-                    {courss.map((course) => <li key={course.id}>{course.course_name}</li>)}
+                    {courss.map((course) => <li className='ml-5' key={course.id}>{course.course_name}</li>)}
                 </ul>
             </div>
-            <hr className='w-full' />
+            <hr className='w-full mt-4 mb-4' />
             <div>
-
-                <p>Total Credit Hour : <span>13</span></p>
+                <p className='text-[#1C1B1BCC] text-base font-medium'>Total Credit Hour : <span>{totaCredit}</span></p>
             </div>
+            <hr className='w-full my-4' />
             <div>
-
-                <p>Total Price : <span>48000</span> USD</p>
+                <p className='text-[#1C1B1BCC] text-base font-semibold'>Total Price : <span>{totaCost}</span> USD</p>
             </div>
-            <hr className='w-full' />
+
         </div>
     );
 };
