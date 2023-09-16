@@ -18,7 +18,7 @@ function App() {
 
     const isExits = data.find(items => items.id == courss.id);
     if (isExits) {
-      return toast('Hello Geeks');
+      return alert('this course already added');
     }
     else {
       let count = reamining;
@@ -37,7 +37,7 @@ function App() {
 
 
       if (count < 0) {
-        return alert('ar na');
+        return alert('Credit Hour Reamining is out');
       }
       else {
         // console.log('this is else ', count);
