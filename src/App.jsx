@@ -3,6 +3,9 @@ import { useState } from 'react';
 import './App.css'
 import Courses from './component/Courses'
 import CourseName from './component/CourseName/CourseName';
+import Swal from 'sweetalert2';
+
+
 
 function App() {
 
@@ -11,14 +14,18 @@ function App() {
   const [totaCredit, setTotaCredit] = useState(0);
   const [totaCost, setTotaCost] = useState(0);
   const [id, setId] = useState([]);
-  // console.log(data);
 
   const handleCart = (props, id) => {
     const courss = props.course;
 
     const isExits = data.find(items => items.id == courss.id);
     if (isExits) {
-      return alert('this course already added');
+      return Swal.fire({
+        title: '!!!',
+        text: 'Already added this course.',
+        icon: 'warning',
+        confirmButtonText: 'OK'
+      });
     }
     else {
       let count = reamining;
@@ -37,10 +44,14 @@ function App() {
 
 
       if (count < 0) {
-        return alert('Credit Hour Reamining is out');
+        return Swal.fire({
+          title: '!!!',
+          text: 'Credit Hour Remaining is out.',
+          icon: 'warning',
+          confirmButtonText: 'OK'
+        });
       }
       else {
-        // console.log('this is else ', count);
         const final = [...data, courss];
         setData(final);
         setReamining(count);
@@ -69,6 +80,7 @@ function App() {
           ></CourseName></p>
         </div>
       </div>
+
 
     </div>
   )
